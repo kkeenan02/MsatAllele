@@ -14,7 +14,7 @@ The package contains functions to: 1) load ah files from Strand software and bui
 \tabular{ll}{
 Package: \tab MsatAllele\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
+Version: \tab 1.03\cr
 Date: \tab 2008-03-03\cr
 License: \tab GPL (>=2)\cr
 }
@@ -27,7 +27,7 @@ The package contains functions to: 1) load ah files from Strand software and bui
 \author{
 Filipe Alberto
 
-Maintainer: Filipe Alberto <falberto@ualg.pt>
+Maintainer: Filipe Alberto <albertof@uwm.edu>
 
 }
 \references{

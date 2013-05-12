@@ -33,7 +33,8 @@ Alberto F. MsatAllele_1.0: an R package to visualize the binning of microsatelli
 \examples{
 
 data(STRandOUT)
-write.table(STRandOUT,"ah file simulated.txt",sep="\t",na="",quote=FALSE,col.names=FALSE,row.names=FALSE)
+write.table(STRandOUT,"ah file simulated.txt",sep="\t",na="",quote=FALSE,col.names=FALSE,
+            row.names=FALSE)
 read.ah.file("ah file simulated.txt","25-2-2008","P1MX4MX5")
 
 }

@@ -8,13 +8,9 @@
 \usage{
 OrderByLocus(DataBase, marker)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{DataBase}{ A data base with loci and fragment size information }
   \item{marker}{ The locus to be sorted }
-}
-\details{
-  
 }
 \value{
   An ordered fragment size vector for a given locus 

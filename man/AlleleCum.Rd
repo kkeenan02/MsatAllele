@@ -6,7 +6,8 @@
   and allele size on the y axis. Each alternative allele bin is colored differently 
 }
 \usage{
-AlleleCum(DataBase, loci,ymin=NULL,ymax=NULL, c1 = "black", c2 = "grey", ytsize = 1, psize = 1,pch=1)
+AlleleCum(DataBase, loci,ymin=NULL,ymax=NULL, c1 = "black", c2 = "grey", ytsize = 1,
+          psize = 1,pch=1)
 }
 \arguments{
   \item{DataBase}{ A data base with loci and fragment size information}
@@ -19,9 +20,6 @@ AlleleCum(DataBase, loci,ymin=NULL,ymax=NULL, c1 = "black", c2 = "grey", ytsize 
   \item{psize}{ Point size fin proportion of the default value of one }
   \item{pch}{ Type of plotting symbol }
 
-}
-\details{
-  
 }
 \value{
   The function plots a cumulative allele size distribution for a given locus. The y scale can be restricted to a given interval of allele size.

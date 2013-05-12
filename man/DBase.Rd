@@ -16,18 +16,7 @@
     \item{\code{Plate}}{An entry field for fragment analysis plate}
   }
 }
-\details{
-  
-}
-\source{
- 
-}
-\references{
-  
-}
 \examples{
 data(DBase)
-
-
 }
 \keyword{datasets}

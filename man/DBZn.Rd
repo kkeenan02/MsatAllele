@@ -15,10 +15,6 @@
     \item{\code{Date}}{An entry field for the date}
     \item{\code{Plate}}{An entry field for fragment analysis plate} }
 }
-\details{
-}
-\source{
-}
 \author{ Filipe Alberto }
 \references{
 Alberto F. MsatAllele_1.0: an R package to visualize the binning of microsatellite alleles Journal of Heredity. 100(3):394,397

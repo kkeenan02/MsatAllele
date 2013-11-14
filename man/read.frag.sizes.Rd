@@ -17,7 +17,8 @@ read.frag.sizes(in.file, date, plate)
 \details{
   This functions reads tab delimited files with the following fields: 1st column-sample name;
   2nd column-Panel or test name (specific combination of loci in that sample); 3rd column-Locus name; 
-  4th column-fragment size for first allele; 5th column-fragment size for 2nd allele.
+  4th column-fragment size for first allele; 5th column-fragment size for 2nd allele. Use NA to code
+  absent data.
 }
 \value{
  \item{Marker}{Genetic marker code}

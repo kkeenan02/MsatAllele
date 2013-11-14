@@ -15,8 +15,8 @@ Visualizes and scores microsatellite alleles from electrophoresis fragment sizes
 \tabular{ll}{
 Package: \tab MsatAllele\cr
 Type: \tab Package\cr
-Version: \tab 1.04\cr
-Date: \tab 2013-05-12\cr
+Version: \tab 1.05\cr
+Date: \tab 2013-11-14\cr
 License: \tab GPL (>=2)\cr
 }
 

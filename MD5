@@ -1,4 +1,4 @@
-78c33dacb2f98371a6382a68cea09d88 *DESCRIPTION
+0986da8e0a259bfb95758494bf6c2f4a *DESCRIPTION
 9fdfeb11f7ddba6f3aab9aaa6b1ac5dd *NAMESPACE
 c8f816d0d19f16fac82b590d0e1de84a *R/AlleleCum.R
 3f1af795f2c35ba4ae515144677cec4f *R/AlleleHist.R
@@ -10,7 +10,7 @@ d1888b5c2613386706edec573f58c2d1 *R/bin.limits.R
 6cbbfa19b2ef88f9fed1cd93ecb33318 *R/getpoints.R
 feb04213d71eee9dd46885f3483c0f1e *R/mark.bins.R
 236840ee22654c3931f797a3ed662dc9 *R/read.ah.file.R
-79968be7701b19ef1529a3c77ebc7765 *R/read.frag.sizes.R
+05d78ddef8dafc7ad9836c0bcbc6bb3c *R/read.frag.sizes.R
 8f9ca34097862f8531e3064ea0cdc3f2 *R/restrict.hist.R
 c2837b81a7df2958fa1035943816f699 *R/subdataBase.R
 6e60c20681be935ff9307d245b63b61d *R/transDB.R
@@ -28,7 +28,7 @@ d8d491fb1edd5e539a6315a446aa092c *man/BinStat.Rd
 48cafb5d88ca1dcb74e1ed7d17497a19 *man/DBase.Rd
 750d010e2a13fc6f1210fb975150d424 *man/DefBinLim.Rd
 11a5dbfa9bfaaf08271aa09c1f2fcd94 *man/InputFile.Rd
-d189039fe84b944346e87db8f9341d9f *man/MsatAllele-package.Rd
+3dc8528c0a53ec72a6a7920f942c4c82 *man/MsatAllele-package.Rd
 b565243779203e8e19defbfa9368e840 *man/OrderByLocus.Rd
 814d481f4b1e1385f02c1a54790a4a68 *man/STRandOUT.Rd
 0b0305c5e455e44e14a55dd922ce0657 *man/bin.limits.Rd
@@ -36,7 +36,7 @@ f23cfa987627f44d3292ef61000d9146 *man/get.allele.Rd
 23f63693ac97cfa24ce6fb309acdc28e *man/getpoints.Rd
 3af6db65cc9627fdc39f2082ac5c247b *man/mark.bins.Rd
 a68908e4f170952f280bae3bd4a4836c *man/read.ah.file.Rd
-94d23dc854f04cd396c11e59e824fe16 *man/read.frag.sizes.Rd
+193f798b7cf1f63913f7e1cd5ff9f85e *man/read.frag.sizes.Rd
 496b59e2f0164310da69b4e19aa59a7c *man/restrict.hist.Rd
 7d80951d7af1c95dc0abfa45b84f39ba *man/subdataBase.Rd
 fe5b6d35fc1ad868380cbda8fde8d18e *man/transDB.Rd

@@ -1,0 +1,10 @@
+---
+title: "README"
+author: "Kevin Keenan"
+date: "Monday, September 15, 2014"
+output: html_document
+---
+
+This repository contains my personal version of Filipe Alberto's R package `MsatAllele`. This version implements faster more efficient R code to allow the analysis of larger microsatellite data sets.
+
+This package is intended for my own use, and I take no responsibility for any problems in the code. Users of the MsatAllele package should contact the orginal author of the package with any issues.

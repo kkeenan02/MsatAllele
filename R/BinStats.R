@@ -1,4 +1,4 @@
-binStats <- function(DataBase, loci){
+BinStats <- function(DataBase, loci){
   o <- order(DataBase$Fragment[DataBase$Marker == loci])
   Frag <- DataBase$Fragment[o]
   LocusDBF <- OrderByLocus(DataBase, loci)

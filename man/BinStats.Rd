@@ -26,7 +26,6 @@ Alberto F. MsatAllele_1.0: an R package to visualize the binning of microsatelli
 
 \examples{
 data(DBase)
-DBase <- OrderByLocus(DBase, "BC-4")
 BinStat(DBase,"BC-4")
 }
 

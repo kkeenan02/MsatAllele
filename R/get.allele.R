@@ -1,5 +1,5 @@
-get.allele <- function(LocusDBF, Marker, fragment){
-  #LocusDBF <- MsatAllele::OrderByLocus(RefDB,Marker)
+get.allele <- function(RefDB, Marker, fragment){
+  LocusDBF <- OrderByLocus(RefDB,Marker)
   c1<-(LocusDBF[,2]>=fragment-0.8 & LocusDBF[,2]<=fragment+0.8)
   Checkrange<-LocusDBF[c1,2]
   j<-1

@@ -1,7 +1,7 @@
  allCum <- function(DataBase, loci, ymin = NULL, ymax = NULL,
                        c1 = "black", c2 = "grey", ytsize = 1, 
                        psize = 1, pch = 1){
-#   DataBase = readRDS("BASELINEDB.Rds")
+#   DataBase = MsatAllele::fastReadFrag("mini.txt", "x", "y")
 #   loci = "Ssa85"
 #   ymin = NULL
 #   ymax = NULL

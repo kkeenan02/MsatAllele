@@ -20,5 +20,6 @@ fastReadFrag <- function(in.file, date, plate){
   TAB <- TAB[!MS, ]
   colnames(TAB) <- c("Marker", "Sample", "Fragment", "Date", "Plate")
   TAB <- as.data.frame(TAB)
+  TAB$Fragment <- as.numeric(TAB$Fragment)
   return(TAB)
 }

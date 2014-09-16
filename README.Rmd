@@ -8,3 +8,11 @@ output: html_document
 This repository contains my personal version of Filipe Alberto's R package `MsatAllele`. This version implements faster more efficient R code to allow the analysis of larger microsatellite data sets.
 
 This package is intended for my own use, and I take no responsibility for any problems in the code. Users of the MsatAllele package should contact the orginal author of the package with any issues.
+
+The package currently implements a small amount of C++ code (badly), so anyone wishing to install it will require additional build tools on their system. Information about these tools can be found [here](http://www.rstudio.com/products/rpackages/devtools/).
+
+Once the prerequisite tools are installed, this version of `MsatAllele` can be installed using the `devtools` package as follows:
+
+```{r, eval=FALSE}
+devtools::install_github("kkeenan02/MsatAllele")
+```

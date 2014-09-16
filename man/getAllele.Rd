@@ -32,8 +32,7 @@ Alberto F. MsatAllele_1.0: an R package to visualize the binning of microsatelli
 
 
 data(DBase)
-LDB <- OrderByLocus(DBase, "BC-16")
-fragRef <- LDB$Fragment[LDB$Marker == "BC-16"]
+fragRef <- DBase$Fragment[DBase$Marker == "BC-16"]
 getAllele(fragRef, 142.54)
 }
 

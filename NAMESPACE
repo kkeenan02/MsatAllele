@@ -3,3 +3,6 @@
 
 # Export all names
 exportPattern(".")
+useDynLib(MsatAllele)
+exportPattern("^[[:alpha:]]+")
+importFrom(Rcpp, evalCpp)

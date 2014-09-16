@@ -5,11 +5,11 @@ using namespace Rcpp;
 // This function replicates the get.allele function from the MsatAllele package
 
 // [[Rcpp::export]]
-List getAll(NumericVector fragRef , double frag){
+List getAll(NumericVector fragRef , double frag, double limit){
   int n = fragRef.size();
   LogicalVector all = fragRef.size();
   for(int i = 0; i < n; i++){
-    if((fragRef[i] >= frag - 0.8) & (fragRef[i] <= frag + 0.8)){
+    if((fragRef[i] >= frag - limit) & (fragRef[i] <= frag + limit)){
       all[i] = TRUE;
     } else {
       all[i] = FALSE;
@@ -21,7 +21,7 @@ List getAll(NumericVector fragRef , double frag){
   int i = 0;
   for(int j = 0; j < nwn; j++){
     double dif = nw[j+1] - nw[j];
-    if(dif >= 0.4){
+    if(dif >= (limit/2.0)){
       break;
     } else {
      i = i + 1; 

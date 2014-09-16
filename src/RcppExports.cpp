@@ -6,15 +6,16 @@
 using namespace Rcpp;
 
 // getAll
-List getAll(NumericVector fragRef, double frag);
-RcppExport SEXP MsatAllele_getAll(SEXP fragRefSEXP, SEXP fragSEXP) {
+List getAll(NumericVector fragRef, double frag, double limit);
+RcppExport SEXP MsatAllele_getAll(SEXP fragRefSEXP, SEXP fragSEXP, SEXP limitSEXP) {
 BEGIN_RCPP
     SEXP __sexp_result;
     {
         Rcpp::RNGScope __rngScope;
         Rcpp::traits::input_parameter< NumericVector >::type fragRef(fragRefSEXP );
         Rcpp::traits::input_parameter< double >::type frag(fragSEXP );
-        List __result = getAll(fragRef, frag);
+        Rcpp::traits::input_parameter< double >::type limit(limitSEXP );
+        List __result = getAll(fragRef, frag, limit);
         PROTECT(__sexp_result = Rcpp::wrap(__result));
     }
     UNPROTECT(1);

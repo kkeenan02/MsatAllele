@@ -1,8 +1,8 @@
-BinStats <- function(DataBase, loci){
+BinStats <- function(DataBase, loci, limit = 0.8){
   o <- order(DataBase$Fragment[DataBase$Marker == loci])
   Frag <- DataBase$Fragment[DataBase$Marker == loci][o]
   Bin <- sapply(Frag, function(x){
-    getAllele(Frag, x)
+    getAllele(Frag, x, limit)
   })
   Bins  <-levels(as.factor(Bin))
   N     <-tapply(Bin,as.factor(Bin),length)

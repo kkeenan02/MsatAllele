@@ -6,11 +6,12 @@
   Writes a data frame with summary statistics for each bin of a given locus
 }
 \usage{
-BinStats(DataBase, loci)
+BinStats(DataBase, loci, limit)
 }
 \arguments{
   \item{DataBase}{ A data base with loci and fragment size information }
   \item{loci}{ The locus of interest }
+  \item{limit}{Bin limits}
 }
 \details{
   This function writes to a table bin statistics: Bin code, number of observations, minimum size, maximum size,
@@ -26,7 +27,7 @@ Alberto F. MsatAllele_1.0: an R package to visualize the binning of microsatelli
 
 \examples{
 data(DBase)
-BinStat(DBase,"BC-4")
+BinStats(DBase,"BC-4", 0.8)
 }
 
 \keyword{ univar }

@@ -6,12 +6,13 @@
   Rounds a fragment size with two decimal of a bp to an integer allele code
 }
 \usage{
-getAllele(fragRef, frag)
+getAllele(fragRef, frag, limit)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{fragRef}{A vector of fragments for a given locus}
   \item{frag}{A double, which is the fragment to be assigned to a bin}
+  \item{limit}{Bin limits}
 }
 \details{
   The algorithm implemented searchs the database for all observed fragments within the interval set by
@@ -33,7 +34,7 @@ Alberto F. MsatAllele_1.0: an R package to visualize the binning of microsatelli
 
 data(DBase)
 fragRef <- DBase$Fragment[DBase$Marker == "BC-16"]
-getAllele(fragRef, 142.54)
+getAllele(fragRef, 142.54, 0.8)
 }
 
 

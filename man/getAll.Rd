@@ -8,12 +8,13 @@ internal c++ function
 internal c++ function
 }
 \usage{
-getAll(fragRef, frag)
+getAll(fragRef, frag, limit)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{fragRef}{All fragments for a locus}
   \item{frag}{The fragment to be assigned to an allele bin}
+  \item{limit}{Bin limits}
 }
 
 \value{

@@ -1,20 +1,20 @@
- allCum <- function(DataBase, loci, ymin = NULL, ymax = NULL,
-                       c1 = "black", c2 = "grey", ytsize = 1, 
-                       psize = 1, pch = 1){
-#   DataBase = MsatAllele::fastReadFrag("mini.txt", "x", "y")
-#   loci = "Ssa85"
-#   ymin = NULL
-#   ymax = NULL
-#   c1 = "black"
-#   c2 = "grey"
-#   ytsize = 1
-#   psize = 1
-#   pch = 1
+allCum <- function(DataBase, loci, ymin = NULL, ymax = NULL,
+                   c1 = "black", c2 = "grey", ytsize = 1, 
+                   psize = 1, pch = 1, limit = 0.8){
+  #   DataBase = MsatAllele::fastReadFrag("mini.txt", "x", "y")
+  #   loci = "Ssa85"
+  #   ymin = NULL
+  #   ymax = NULL
+  #   c1 = "black"
+  #   c2 = "grey"
+  #   ytsize = 1
+  #   psize = 1
+  #   pch = 1
   o <- order(DataBase$Fragment[DataBase$Marker == loci])
   Frag <- DataBase$Fragment[DataBase$Marker == loci][o]
   #LocusDBF <- OrderByLocus(DataBase, loci)
   Bin <- sapply(Frag, function(x){
-    getAllele(Frag, x)
+    getAllele(Frag, x, limit)
   })
   Color.vect <- 1:length(Frag)
   tempC <- c1

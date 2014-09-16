@@ -7,7 +7,7 @@
 }
 \usage{
 allCum(DataBase, loci, ymin = NULL, ymax = NULL, c1 = "black", 
-       c2 = "grey", ytsize = 1, psize = 1,pch=1)
+       c2 = "grey", ytsize = 1, psize = 1,pch=1, limit = 0.8)
 }
 \arguments{
   \item{DataBase}{ A data base with loci and fragment size information}
@@ -19,6 +19,7 @@ allCum(DataBase, loci, ymin = NULL, ymax = NULL, c1 = "black",
   \item{ytsize}{ Text size for the y axis in proportion of the default value of one }
   \item{psize}{ Point size fin proportion of the default value of one }
   \item{pch}{ Type of plotting symbol }
+  \item{limit}{Bin limits}
 
 }
 \value{
@@ -34,6 +35,6 @@ Alberto F. MsatAllele_1.0: an R package to visualize the binning of microsatelli
 \examples{
 
 data(DBase)
-allCum(DBase,"BC-4")
+allCum(DBase,"BC-4", limit = 0.8)
 }
 \keyword{ hplot }

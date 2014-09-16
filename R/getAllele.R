@@ -1,5 +1,5 @@
-getAllele <- function(fragRef, frag){
-  dat <- getAll(fragRef, frag)
+getAllele <- function(fragRef, frag, limit = 0.8){
+  dat <- getAll(fragRef, frag, limit)
   j <- dat[[1]]
   Checkrange <- dat[[2]]
   Lcheck <- length(Checkrange)

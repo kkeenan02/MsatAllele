@@ -6,13 +6,12 @@
   Rounds a fragment size with two decimal of a bp to an integer allele code
 }
 \usage{
-getAllele(LocusDBF, Marker, fragment)
+getAllele(fragRef, frag)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{LocusDBF}{  A data base with loci and fragment size information }
-  \item{Marker}{ The locus to be plotted }
-  \item{fragment}{ The fragment size to round using the Data base distributions }
+  \item{fragRef}{A vector of fragments for a given locus}
+  \item{frag}{A double, which is the fragment to be assigned to a bin}
 }
 \details{
   The algorithm implemented searchs the database for all observed fragments within the interval set by
@@ -23,7 +22,7 @@ getAllele(LocusDBF, Marker, fragment)
 \value{
   An integer allele code
 }
-\author{ Filipe Alberto }
+\author{Kevin Keenan}
 \references{
 Alberto F. MsatAllele_1.0: an R package to visualize the binning of microsatellite alleles Journal of Heredity. 100(3):394,397
 }
@@ -34,7 +33,8 @@ Alberto F. MsatAllele_1.0: an R package to visualize the binning of microsatelli
 
 data(DBase)
 LDB <- OrderByLocus(DBase, "BC-16")
-getAllele(LDB,"BC-16",142.54)
+fragRef <- LDB$Fragment[LDB$Marker == "BC-16"]
+getAllele(fragRef, 142.54)
 }
 
 

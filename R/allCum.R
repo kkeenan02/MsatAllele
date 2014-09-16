@@ -11,10 +11,10 @@
 #   psize = 1
 #   pch = 1
   o <- order(DataBase$Fragment[DataBase$Marker == loci])
-  Frag <- DataBase$Fragment[o]
-  LocusDBF <- OrderByLocus(DataBase, loci)
+  Frag <- DataBase$Fragment[DataBase$Marker == loci][o]
+  #LocusDBF <- OrderByLocus(DataBase, loci)
   Bin <- sapply(Frag, function(x){
-    getAllele(LocusDBF, loci, x)
+    getAllele(Frag, x)
   })
   Color.vect <- 1:length(Frag)
   tempC <- c1

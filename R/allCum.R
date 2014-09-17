@@ -51,7 +51,8 @@ allCum <- function(DataBase, loci, ymin = NULL, ymax = NULL,
   }
   p <- ggplot(Bin, aes(x = Sample, y = Fragment, colour = col)) +
     geom_point() +
-    scale_y_continuous(breaks = round(seq(min(dat$y), max(dat$y), by = 0.2),1))
+    scale_y_continuous(breaks = round(seq(min(Bin$Fragment), 
+                                          max(Bin$Fragment), by = 0.2),1))
   list(plt = p,
        df = Bin)
 }

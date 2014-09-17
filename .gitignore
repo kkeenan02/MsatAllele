@@ -9,4 +9,4 @@ misc/
 *.txt
 src-i386/
 src-x64/
-[*].o
+*.dll

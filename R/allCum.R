@@ -1,15 +1,16 @@
 allCum <- function(DataBase, loci, ymin = NULL, ymax = NULL,
-                   c1 = "black", c2 = "grey", ytsize = 1, 
+                   c1 = "blue", c2 = "orange", ytsize = 1, 
                    psize = 1, pch = 1, limit = 0.8){
-  #   DataBase = MsatAllele::fastReadFrag("mini.txt", "x", "y")
-  #   loci = "Ssa85"
-  #   ymin = NULL
-  #   ymax = NULL
-  #   c1 = "black"
-  #   c2 = "grey"
-  #   ytsize = 1
-  #   psize = 1
-  #   pch = 1
+#   DataBase = DB
+#   loci = "Ssa85"
+#   ymin = NULL
+#   ymax = NULL
+#   c1 = "blue"
+#   c2 = "orange"
+#   ytsize = 1
+#   psize = 1
+#   pch = 1
+#   limit = 0.8
   o <- order(DataBase$Fragment[DataBase$Marker == loci])
   Frag <- DataBase$Fragment[DataBase$Marker == loci][o]
   #LocusDBF <- OrderByLocus(DataBase, loci)
@@ -32,13 +33,24 @@ allCum <- function(DataBase, loci, ymin = NULL, ymax = NULL,
     }
     if(i > length(Frag)) break
   }
-  plot(Frag, type = "n", axes = FALSE, xlab = "Number of observations", 
-       ylab = "Allele size (bp)", main = loci, ylim = c(ymin,ymax))
-  par(cex = psize)
-  points(Frag, col = Color.vect, pch = pch)
-  par(cex = 1)
-  axis(1, pos = min(Bin) - 1)
-  par(cex = ytsize)
-  axis(2, pos = 0, las = 2, at = as.numeric(levels(as.factor(Bin))))
-  par(cex = 1)
+  samps <- DataBase$Sample[DataBase$Marker == loci][o]
+  
+  if(is.null(ymin) & is.null(ymax)){
+    Bin <- data.frame(Sample_ID = samps,
+                      Sample = 1:length(Bin),
+                      Fragment = Frag,
+                      Bin = Bin,
+                      col = as.factor(Bin)) 
+  } else {
+    Bin <- data.frame(Sample_ID = samps,
+                      Sample = 1:length(Bin),
+                      Fragment = Frag,
+                      Bin = Bin,
+                      col = as.factor(Bin))
+    Bin <- Bin[(Bin$Frag >= ymin & Bin$Frag <= ymax),]
+  }
+  p <- ggplot(Bin, aes(x = Sample, y = Fragment, colour = col)) +
+    geom_point()
+  list(plt = p,
+       df = Bin)
 }

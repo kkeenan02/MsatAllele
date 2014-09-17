@@ -7,3 +7,6 @@ misc/
 >>>>>>> c13dca2c7f33e52214c4ccd75f7af5994397f462
 *.rds
 *.txt
+src-i386/
+src-x64/
+[*].o

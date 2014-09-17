@@ -3,10 +3,10 @@
 # which may actually be artifact peaks, etc.
 
 # Written by Kevin Keenan, 2013
-getLowFreq <- function(database, marker, n) {
+getLowFreq <- function(database, marker, n, limit = 0.8) {
   db <- database
   loc <- marker
-  rd <- BinStat(db, loc)
+  rd <- BinStats(db, loc, limit)
   dat <- cbind(rd$Min[rd$N <= n], rd$Max[rd$N <= n])
   if (nrow(dat) == 0L) {
     cat("No valid samples")

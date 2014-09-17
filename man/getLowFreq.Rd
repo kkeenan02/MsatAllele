@@ -8,13 +8,14 @@ This function allows users to lookup the allele database for individuals with al
 The function searches through the allele database for individuals with alleles that occur fewer than n times across all individuals.
 }
 \usage{
-getLowFreq(database, marker, n)
+getLowFreq(database, marker, n, limit = 0.8)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{database}{The database}
   \item{marker}{The microsatellite marker of interest}
   \item{n}{The minimum number of allele observation}
+  \item{limit}{Bin limit}
 }
 
 \value{

@@ -1,5 +1,5 @@
 allCum <- function(DataBase, loci, ymin = NULL, ymax = NULL,
-                   c1 = "blue", c2 = "orange", ytsize = 1, 
+                   c1 = "pink", c2 = "blue", ytsize = 1, 
                    psize = 1, pch = 1, limit = 0.8){
 #   DataBase = DB
 #   loci = "Ssa85"
@@ -52,7 +52,8 @@ allCum <- function(DataBase, loci, ymin = NULL, ymax = NULL,
   brks <- round(seq(ymin, ymax, by = (ymax - ymin)/50), 1)
   p <- ggplot(Bin, aes(x = Sample, y = Fragment, colour = col)) +
     geom_point() +
-    scale_y_continuous(breaks = brks)
+    scale_y_continuous(breaks = brks) +
+    theme(legend.position="none")
   list(plt = p,
        df = Bin)
 }

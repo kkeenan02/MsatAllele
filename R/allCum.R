@@ -40,16 +40,16 @@ allCum <- function(DataBase, loci, ymin = NULL, ymax = NULL,
                       Sample = 1:length(Bin),
                       Fragment = Frag,
                       Bin = Bin,
-                      Allele = as.factor(Bin)) 
+                      col = as.factor(Color.vect)) 
   } else {
     Bin <- data.frame(Sample_ID = samps,
                       Sample = 1:length(Bin),
                       Fragment = Frag,
                       Bin = Bin,
-                      Allele = as.factor(Bin))
+                      col = as.factor(Color.vect))
     Bin <- Bin[(Bin$Frag >= ymin & Bin$Frag <= ymax),]
   }
-  p <- ggplot(Bin, aes(x = Sample, y = Fragment, colour = Allele)) +
+  p <- ggplot(Bin, aes(x = Sample, y = Fragment, colour = col)) +
     geom_point()
   list(plt = p,
        df = Bin)

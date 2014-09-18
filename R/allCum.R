@@ -14,8 +14,16 @@ allCum <- function(DataBase, loci, ymin = NULL, ymax = NULL,
   o <- order(DataBase$Fragment[DataBase$Marker == loci])
   Frag <- DataBase$Fragment[DataBase$Marker == loci][o]
   #LocusDBF <- OrderByLocus(DataBase, loci)
-  Bin <- sapply(Frag, function(x){
-    getAllele(Frag, x, limit)
+  if(is.list(limit)){
+    lims <- do.call("rbind", limit)
+  }
+  Bin <- sapply(Frag, function(x){ 
+    if(is.list(limit)){
+      lim <- lims[which(lims[,1] == min(lims[,1][x <= lims[,1]])), 2]
+    } else{
+      lim = limit
+    }
+    getAllele(Frag, x, lim)
   })
   Color.vect <- 1:length(Frag)
   tempC <- c1

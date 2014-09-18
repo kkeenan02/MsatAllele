@@ -49,7 +49,11 @@ allCum <- function(DataBase, loci, ymin = NULL, ymax = NULL,
                       col = as.factor(Color.vect))
     Bin <- Bin[(Bin$Frag >= ymin & Bin$Frag <= ymax),]
   }
-  brks <- round(seq(ymin, ymax, by = (ymax - ymin)/50), 1)
+  if(is.null(ymin) & is.null(ymax)){
+    ymin <- min(Bin$Fragment) - 2
+    ymax <- max(Bin$Fragment) + 2
+  }
+  brks <- round(seq(ymin, ymax, by = (ymax - ymin)/20), 1)
   p <- ggplot(Bin, aes(x = Sample, y = Fragment, colour = col)) +
     geom_point() +
     scale_y_continuous(breaks = brks) +

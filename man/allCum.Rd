@@ -6,8 +6,8 @@
   and allele size on the y axis. Each alternative allele bin is colored differently 
 }
 \usage{
-allCum(DataBase, loci, ymin = NULL, ymax = NULL, c1 = "blue", 
-       c2 = "orange", ytsize = 1, psize = 1,pch=1, limit = 0.8)
+allCum(DataBase, loci, ymin = NULL, ymax = NULL, c1 = "pink", 
+       c2 = "blue", ytsize = 1, psize = 1,pch=1, limit = 0.8)
 }
 \arguments{
   \item{DataBase}{ A data base with loci and fragment size information}

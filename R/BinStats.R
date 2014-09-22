@@ -1,8 +1,16 @@
 BinStats <- function(DataBase, loci, limit = 0.8){
   o <- order(DataBase$Fragment[DataBase$Marker == loci])
   Frag <- DataBase$Fragment[DataBase$Marker == loci][o]
-  Bin <- sapply(Frag, function(x){
-    getAllele(Frag, x, limit)
+  if(is.list(limit)){
+    lims <- do.call("rbind", limit)
+  }
+  Bin <- sapply(Frag, function(x){ 
+    if(is.list(limit)){
+      lim <- lims[which(lims[,1] == min(lims[,1][x <= lims[,1]])), 2]
+    } else{
+      lim = limit
+    }
+    getAllele(Frag, x, lim)
   })
   Bins  <-levels(as.factor(Bin))
   N     <-tapply(Bin,as.factor(Bin),length)

@@ -10,3 +10,4 @@ misc/
 src-i386/
 src-x64/
 *.dll
+*.o

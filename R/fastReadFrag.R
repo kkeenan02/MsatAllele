@@ -18,7 +18,8 @@ fastReadFrag <- function(in.file, date, plate, long = FALSE){
   } else {
     TAB <- apply(GMdata, 1, function(x){
       if(is.na(x[4])){
-        return(c(NA, NA, NA, NA, NA))
+        return(rbind(c(NA, NA, NA, NA, NA),
+                     c(NA, NA, NA, NA, NA)))
       } else {
         return(rbind(c(x[c(3,1,4)], date, plate),
                      c(x[c(3,1,5)], date, plate)))

@@ -6,7 +6,7 @@
   Reads input text files with continuous fragment size data and creates an R data base.
 }
 \usage{
-fastReadFrag(in.file, date, plate, long = FALSE)
+fastReadFrag(in.file, date, plate, long = FALSE, keep.missing = FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -14,6 +14,7 @@ fastReadFrag(in.file, date, plate, long = FALSE)
   \item{date}{ A relevant date to be written on the data base }
   \item{plate}{ A sample plate code to be written on the data base }
   \item{long}{ Determines whether homozygotes should be stored as a single row or two.}
+  \item{keep.missing}{retain missing data rows in the output dataframe}
 }
 \details{
   This functions reads tab delimited files with the following fields: 1st column-sample name;

@@ -2,7 +2,8 @@
 #' 
 #' Kevin Keenan, 2014
 
-fastReadFrag <- function(in.file, date, plate, long = FALSE){
+fastReadFrag <- function(in.file, date, plate, long = FALSE, 
+                         keep.missing = FALSE){
   GMdata <- read.table(file = in.file, sep = "\t", header = TRUE)
   if(!long){
     TAB <- apply(GMdata, 1, function(x){
@@ -17,14 +18,15 @@ fastReadFrag <- function(in.file, date, plate, long = FALSE){
     })
   } else {
     TAB <- apply(GMdata, 1, function(x){
-      if(is.na(x[4])){
-        return(rbind(c(NA, NA, NA, NA, NA),
-                     c(NA, NA, NA, NA, NA)))
+      if(any(is.na(x))){
+        list(rbind(c(x[c(3, 1)], NA, date, plate),
+                   c(x[c(3, 1)], NA, date, plate)))
       } else {
-        return(rbind(c(x[c(3,1,4)], date, plate),
-                     c(x[c(3,1,5)], date, plate)))
+        list(rbind(c(x[c(3,1,4)], date, plate),
+                   c(x[c(3,1,5)], date, plate)))
       }
     })
+    TAB <- lapply(TAB, "[[", 1)
   }
   TAB <- do.call("rbind", TAB)
   MS <- apply(TAB, 1, function(x) any(is.na(x)))
@@ -32,6 +34,9 @@ fastReadFrag <- function(in.file, date, plate, long = FALSE){
   TAB <- as.data.frame(TAB)
   TAB$Sample <- factor(TAB$Sample, levels(GMdata$Sample.Name))
   TAB$Fragment <- as.numeric(levels(TAB$Fragment))[TAB$Fragment]
-  TAB <- TAB[!MS, ]
+  if(!keep.missing){
+    TAB <- TAB[!MS, ] 
+  }
+  rownames(TAB) <- NULL
   return(TAB)
 }
